@@ -3,6 +3,7 @@ import { useMutation } from 'react-query';
 import { Form, Input, Button, message } from 'antd';
 import './styles/login.css';
 import http from './http';
+import { useStore } from './store';
 const Item = Form.Item
 
 interface ITable {
@@ -15,6 +16,7 @@ const Login: React.FC = () => {
     const [form] = Form.useForm()
     const [loading, setLoading] = useState<boolean>(false)
     const [, setformData] = useState<ITable>({})
+    const { state, dispatch } = useStore()
 
     // const useValidate = () => useQuery(['todos'], getData)
     // 获取数据
@@ -36,11 +38,12 @@ const Login: React.FC = () => {
 
     // 登录
     const onFinish = async () => {
-        const values = await form.validateFields()
-        // setLoading(true)
-        setformData(values)
 
-        mutation.mutate(values)
+        // const values = await form.validateFields()
+        // // setLoading(true)
+        // setformData(values)
+
+        // mutation.mutate(values)
     }
 
     const formItemLayout = {
