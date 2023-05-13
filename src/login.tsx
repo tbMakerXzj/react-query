@@ -76,7 +76,7 @@ const Login: React.FC = () => {
     }
 
     useEffect(() => {
-        console.log('test');
+        console.log('test111');
     }, [])
 
     return <div className='loginWrapper'>
