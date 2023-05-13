@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMutation } from 'react-query';
 import { Form, Input, Button, message } from 'antd';
 import './styles/login.css';
@@ -75,6 +75,9 @@ const Login: React.FC = () => {
         return Promise.resolve()
     }
 
+    useEffect(() => {
+        console.log('test');
+    }, [])
 
     return <div className='loginWrapper'>
         <div className='login'>
